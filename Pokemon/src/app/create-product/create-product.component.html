@@ -1,0 +1,79 @@
+<div class="form">
+
+
+<form class="form-horizontal" (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <div class="form-group">
+    <label class="control-label col-sm-offset-1 col-sm-2" for="name">Name:</label>
+    <div class="col-xs-5">
+      <input type="text" class="form-control" id="name" name="name" 
+      placeholder="Enter name" minlength="3"
+      ngModel required pattern="[a-zA-Z0-9]*$">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-offset-1 col-sm-2" for="pwd">Description:</label>
+    <div class="col-xs-5">
+      <input type="text" class="form-control" id="dsc" name="dsc" 
+      placeholder="Enter Description" 
+      ngModel minlength="3" pattern="[a-zA-Z0-9]*$" required>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-offset-1 col-sm-2" for="price">Price:</label>
+    <div class="col-xs-5">
+      <input type="text" class="form-control" id="price" name="price" placeholder="Enter price" 
+      ngModel required step=".01">
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-offset-1 col-sm-2" for="sel1">Category:</label>
+    <div class="col-xs-5">
+        <select class="form-control" id="sel1" name="category"required ngModel>
+          <option>Electronics</option>
+          <option>Cloths</option>
+          <option>Blankets</option>
+        </select>
+      </div>
+    </div>
+  <div class="form-group">
+    <label class="control-label col-sm-offset-1 col-sm-2" for="img">Image Url:</label>
+    <div class="col-xs-5">
+      <input type="text" class="form-control" id="img" name="img" placeholder="Ente image Url" ngModel required>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-sm-offset-1 col-sm-2" for="pwd">Phone number:</label>
+    <div class="col-xs-5">
+      <input type="text" class="form-control" id="pwd" name="pwd"
+       placeholder="Enter password" 
+       maxlength="10" ngModel required  pattern="^[0-9]+$">
+    </div>
+  </div>
+  
+  <div class="form-group">
+    <label class="control-label col-sm-offset-1 col-sm-2" for="sel1">Select:</label>
+    <div class="col-xs-5">
+        <select class="form-control" id="sel2" name="select"ngModel required>
+          <option>Mobile</option>
+          <option>LandLine</option>
+        </select>
+      </div>
+    </div>
+      <div class="form-group">
+        <div class="col-sm-offset-3 col-xs-2">
+          <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Save</button>
+        </div>
+        <!-- [disabled]="!formReference.valid" -->
+         <div class="col-xs-2">
+        <button type="reset" class="btn btn-primary">Reset</button>
+        </div>
+        <!-- <div class="col-xs-2">
+        <button type="submit" class="btn btn-primary">Add new</button>
+        </div> -->
+      <!-- </div> -->
+      
+      </div>
+    </form>
+      </div>
+      
+
